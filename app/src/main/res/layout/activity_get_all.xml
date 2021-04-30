@@ -20,5 +20,14 @@
         android:clickable="true"
         android:onClick="addCliente"
         android:src="@drawable/ic_baseline_add_24"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:onClick="editCliente"
+        android:src="@drawable/ic_baseline_edit_24"/>
 
 </RelativeLayout>

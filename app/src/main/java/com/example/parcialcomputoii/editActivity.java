@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.parcialcomputoii.interfarces.ClienteAPI;
 import com.example.parcialcomputoii.models.Clientes;
@@ -17,13 +16,12 @@ import com.example.parcialcomputoii.remote.CLIENTEUtils;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity {
+public class editActivity extends AppCompatActivity {
+
     EditText etId, etName, etApellido;
     TextView tvResponse;
-    Button btnSave;
+    Button btnEdit;
 
     //Llamamos a la interfaz ClienteAPI
     private ClienteAPI clienteAPI;
@@ -31,38 +29,34 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_edit);
 
         etId=findViewById(R.id.et_id);
         etName=findViewById(R.id.et_nombre);
         etApellido=findViewById(R.id.et_apellido);
         tvResponse=findViewById(R.id.tvResponse);
-        btnSave=findViewById(R.id.btnSave);
+        btnEdit=findViewById(R.id.btnEdit);
 
         clienteAPI = CLIENTEUtils.getClientAPI();
 
-        //Boton guardar
-        btnSave.setOnClickListener(new View.OnClickListener(){
+        //Boton para actualizar
+        btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(etName.getText().toString().isEmpty() && etApellido.getText().toString().isEmpty()){
-                    return;
-                }
-
-                //Llamada al metodo
-                saveClientes(etName.getText().toString(), etApellido.getText().toString());
+                editClientes(etId.getText().toString(), etName.getText().toString(), etApellido.getText().toString() );
             }
         });
 
 
     }
 
-    public void saveClientes(String nombre, String apellido){
 
-        Clientes clientes = new Clientes(nombre, apellido);
+    public void editClientes(String id, String nombre, String apellido){
+
+        Clientes clientes = new Clientes(id, nombre, apellido);
 
         //Llamamos al metodo de la interfaz ClienteAPI
-        clienteAPI.saveClientes(clientes).enqueue(new Callback<Clientes>() {
+        clienteAPI.updateClientes(clientes).enqueue(new Callback<Clientes>() {
             @Override
             public void onResponse(Call<Clientes> call, Response<Clientes> response) {
 
@@ -79,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
                 showResponse(t.getMessage());
             }
         });
-
     }
 
     public void showResponse(String response){
@@ -92,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void regresarList(View v){
 
-        Intent intent = new Intent(MainActivity.this, getAllActivity.class);
+        Intent intent = new Intent(editActivity.this, getAllActivity.class);
         startActivity(intent);
 
     }

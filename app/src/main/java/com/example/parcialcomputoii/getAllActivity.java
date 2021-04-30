@@ -69,5 +69,11 @@ public class getAllActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+    public void editCliente(View v){
+
+        Intent intent = new Intent(getAllActivity.this, editActivity.class);
+        startActivity(intent);
+
+    }
 
 }

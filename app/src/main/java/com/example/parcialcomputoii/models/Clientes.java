@@ -61,8 +61,8 @@ public class Clientes {
     public String toString(){
 
         return "Cliente{" +
-                ",  name='"+ nombre + '\'' +
-                ", color='"+ apellido + '\'' +
+                ",  nombre='"+ nombre + '\'' +
+                ", apellido='"+ apellido + '\'' +
                 '}';
     }
 

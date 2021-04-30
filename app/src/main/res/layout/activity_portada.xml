@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".portadaActivity">
+
+    <TextView
+        android:id="@+id/tvtitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Parcial Computo II"
+        android:gravity="center_horizontal"
+        android:layout_margin="5dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:id="@+id/integrantes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Integrantes:"
+        android:textSize="20dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+    <TextView
+        android:id="@+id/nombre1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="15dp"
+        android:text=" - Cristobal Josué Torres Hernández SMIS009220"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+    <TextView
+        android:id="@+id/nombre2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="15dp"
+        android:text="- Juan Antonio Villatoro Vásquez SMIS010420"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+    <Button
+        android:id="@+id/btnIr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ir a la lista de clientes"
+        android:onClick="irLista"
+        />
+
+
+</LinearLayout>

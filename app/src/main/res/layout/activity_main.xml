@@ -26,7 +26,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
-            android:hint="id"/>
+            android:hint="id"
+            android:visibility="gone"
+            />
         <EditText
             android:id="@+id/et_nombre"
             android:layout_width="match_parent"
@@ -49,13 +51,22 @@
             android:id="@+id/btnEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Edit"/>
+            android:text="Edit"
+            android:visibility="gone"
+            />
         <TextView
             android:id="@+id/tvResponse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone"
             android:layout_marginTop="35dp"/>
+        <Button
+            android:id="@+id/btnRegresar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Regresar a la lista"
+            android:onClick="regresarList"
+            />
 
 
     </LinearLayout>
