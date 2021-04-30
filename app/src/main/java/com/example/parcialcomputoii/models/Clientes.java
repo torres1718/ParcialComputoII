@@ -11,17 +11,25 @@ public class Clientes {
     @SerializedName("nombre")
     @Expose
     private String nombre;
-
-
     @SerializedName("apellido")
     @Expose
     private String apellido;
 
 
+    //Guardar
+    public Clientes(String nombre, String apellido){
+
+        this.nombre = nombre;
+        this.apellido = apellido;
+
+    }
+
+    //Editar
     public Clientes(String id, String nombre, String apellido) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
+
     }
 
     public String getId() {
@@ -47,4 +55,15 @@ public class Clientes {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
+
+    //Mensaje para saber que sí se guardó
+    @Override
+    public String toString(){
+
+        return "Cliente{" +
+                ",  name='"+ nombre + '\'' +
+                ", color='"+ apellido + '\'' +
+                '}';
+    }
+
 }
