@@ -6,41 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
- <LinearLayout
-     android:layout_width="match_parent"
-     android:layout_height="match_parent"
-     android:layout_margin="5dp"
-     android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="107dp">
 
-     <EditText
-         android:id="@+id/edtId"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-     android:ems="10"
-         android:gravity="center"
-         android:hint="Id"
-         android:textSize="24sp"
-         android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="New Pet"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            />
+        <EditText
+            android:id="@+id/et_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:hint="id"/>
+        <EditText
+            android:id="@+id/et_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:hint="Nombre"/>
+        <EditText
+            android:id="@+id/et_apellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:hint="Apellido"/>
 
-     <Button
-         android:id="@+id/btnBuscar"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:text="Buscar registro"
-         android:textSize="18sp"/>
-     <TextView
-         android:id="@+id/tvnombre"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:text="Nombre"
-         android:textSize="24sp"/>
-     <TextView
-         android:id="@+id/tvapellido"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:text="Apellido"
-         android:textSize="24sp"/>
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save"/>
+        <Button
+            android:id="@+id/btnEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Edit"/>
+        <TextView
+            android:id="@+id/tvResponse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="35dp"/>
 
- </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

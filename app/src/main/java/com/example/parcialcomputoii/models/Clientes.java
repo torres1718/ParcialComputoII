@@ -1,21 +1,34 @@
 package com.example.parcialcomputoii.models;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Clientes {
-    private Integer id;
+
+    @SerializedName("id")
+    @Expose
+    private String id;
+    @SerializedName("nombre")
+    @Expose
     private String nombre;
+
+
+    @SerializedName("apellido")
+    @Expose
     private String apellido;
 
-    public Clientes(Integer id, String nombre, String apellido) {
+
+    public Clientes(String id, String nombre, String apellido) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
